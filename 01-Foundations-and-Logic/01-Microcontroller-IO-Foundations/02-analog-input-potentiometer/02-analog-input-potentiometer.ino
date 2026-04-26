@@ -9,7 +9,7 @@
  * and converts it into a digital value (0–1023) using the built-in 
  * Analog-to-Digital Converter (ADC). The result is then displayed 
  * on the Serial Monitor.
- 
+ *
  * Hardware Configuration:
  * - MCU: Arduino Mega 2560 (ATmega2560)
  * - Input: Potentiometer connected to Analog Pin A0
