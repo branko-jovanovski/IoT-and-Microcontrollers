@@ -5,26 +5,28 @@
 ![Proteus](https://img.shields.io/badge/Simulation-Proteus-000000?style=flat-square&logo=circuit-board&logoColor=white)
 
 ## Project Overview
-This project serves as a foundational exercise in embedded systems design, demonstrating real-time hardware control. It illustrates how to acquire digital input signals and drive digital outputs using a continuous polling architecture.
+This project demonstrates the basics of digital input and output control. It reads a signal from a push-button and turns an LED on or off in real-time based on the button's state.
 
 ---
 
 ## Hardware Specifications
 
-| Component | Pin Assignment | Description |
+**Microcontroller:** Arduino Mega 2560 (ATmega2560)
+
+| Component | Pin | Description |
 | :--- | :---: | :--- |
-| **Microcontroller** | N/A | Arduino Mega 2560 (ATmega2560) |
-| **Digital Input** | `D7` | Momentary Push-Button (Active-High configuration) |
-| **Digital Output** | `D13` | Status LED equipped with a 220Ω current-limiting resistor |
+| **Push-Button** | `D7` | Digital Input (Active-High) |
+| **Status LED** | `D13` | Digital Output (with 220Ω resistor) |
 
 ---
 
-## Theory of Operation
-The firmware is designed around a continuous polling loop. The execution logic follows these parameters:
+## How it Works
+The program runs a continuous loop to monitor the push-button in real-time. 
 
-1. **Data Acquisition:** The microcontroller continuously monitors the voltage level on Pin D7.
-2. **State 1 (Active):** Upon closing the circuit (button press), a `HIGH` logic signal is detected. The firmware immediately asserts a `HIGH` state on Pin D13, illuminating the LED.
-3. **State 2 (Idle):** Upon release, the input signal drops to `LOW`, and the microcontroller de-asserts Pin D13, turning the LED off. This creates a direct input-output mirroring effect with minimal latency.
+* **Button Pressed:** The Arduino reads a `HIGH` signal on Pin D7 and turns the LED ON.
+* **Button Released:** The signal drops to `LOW`, and the LED turns OFF.
+
+*Result:* The LED directly mirrors the state of the button.
 
 ---
 
@@ -42,4 +44,5 @@ Navigate directly to the project assets:
 * **Simulation File:** [`01-digital-io-logic.pdsprj`](./01-digital-io-logic.pdsprj)
 
 ---
-*Developed for the IoT and Microcontrollers laboratory curriculum.*
+*Project developed for the IoT and Microcontrollers course.*
+
